@@ -42,7 +42,7 @@ async def echo(bot, update):
     #     chat_id=update.chat.id,
     #     action="typing"
     # )
-    LOGGER.info(update.from_user)
+    logger.info(update.from_user)
     url = update.text
     youtube_dl_username = None
     youtube_dl_password = None
@@ -74,8 +74,8 @@ async def echo(bot, update):
             youtube_dl_username = youtube_dl_username.strip()
         if youtube_dl_password is not None:
             youtube_dl_password = youtube_dl_password.strip()
-        LOGGER.info(url)
-        LOGGER.info(file_name)
+        logger.info(url)
+        logger.info(file_name)
     else:
         for entity in update.entities:
             if entity.type == "text_link":
